@@ -1,1 +1,25 @@
+# Exercise 1: Strata Scratch
+## Remember to ALWAYS include the columns in the select AND group by after!
 
+```sql
+
+SELECT
+    fr.post_id,
+    fr.reaction,
+    fp.poster,
+    fp.post_text,
+    fp.post_keywords,
+    fp.post_date
+FROM facebook_reactions AS fr
+
+LEFT JOIN facebook_posts AS fp
+ON fp.post_id = fr.post_id
+
+WHERE fr.reaction = 'heart'
+GROUP BY
+    fr.post_id,
+    fr.reaction,
+    fp.poster,
+    fp.post_text,
+    fp.post_keywords,
+    fp.post_date;
