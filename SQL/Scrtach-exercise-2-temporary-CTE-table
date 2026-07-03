@@ -1,0 +1,38 @@
+# Q: Calculates the difference between the highest salaries in the marketing and engineering departments. Output just the absolute difference in salaries.
+
+## Here is the first part of the codde joining the table. The next part would involve finding the salary but it can be hard to do when the code becomes long without breaking it. So an alterantive is to save the output to a tempory CTE table.
+
+SELECT 
+a.department_id,
+a.first_name,
+a.id,
+a.last_name,
+a.salary,
+b.department
+
+FROM db_employee AS a
+LEFT JOIN db_dept AS b
+ON a.department_id = b.id
+
+
+
+
+##Saving to a tempory CTE:
+
+WITH employee_dept AS ( --tempory table employee_dept
+    SELECT
+        a.department_id,
+        a.first_name,
+        a.id,
+        a.last_name,
+        a.salary,
+        b.department
+    FROM db_employee AS a
+    LEFT JOIN db_dept AS b
+        ON a.department_id = b.id
+)
+
+SELECT *
+MAX(salary) AS max_salary
+FROM employee_dept
+GROUP BY department;
