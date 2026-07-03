@@ -16,7 +16,7 @@ LEFT JOIN db_dept AS b
 ON a.department_id = b.id
 
 
-###Saving to a tempory CTE:
+### Saving to a tempory CTE:
 
 WITH employee_dept AS ( --tempory table employee_dept
     SELECT
