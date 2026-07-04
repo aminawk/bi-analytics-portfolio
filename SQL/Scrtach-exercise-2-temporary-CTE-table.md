@@ -36,4 +36,5 @@ SELECT *
 MAX(salary) AS max_salary
 FROM employee_dept
 GROUP BY department;
-'''
+
+
