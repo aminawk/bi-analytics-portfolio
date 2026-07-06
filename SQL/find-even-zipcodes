@@ -1,8 +1,8 @@
 /*
-Enter your query here.
-*/
-
 SELECT DISTINCT CITY
 FROM STATION
 WHERE MOD(ID, 2) = 0; --looks at if a number divisible by 2 gives a remainder, if so then odd otherwise even, can also be written as WHERE ID % 2 = 0;
+
+
+*/
 
